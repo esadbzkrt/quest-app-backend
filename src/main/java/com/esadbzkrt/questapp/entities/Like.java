@@ -1,0 +1,2 @@
+package com.esadbzkrt.questapp.entities;public class Like {
+}
