@@ -1,2 +1,22 @@
-package com.esadbzkrt.questapp.entities;public class User {
+package com.esadbzkrt.questapp.entities;
+
+import lombok.Data;
+
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
+@Data
+public class User {
+    @Id
+    Long id;
+
+    String userName;
+    String password;
+
+
+
 }
