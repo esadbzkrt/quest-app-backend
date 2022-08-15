@@ -64,11 +64,11 @@ public class LikeService {
     public Like updateLike(Long likeId, LikeCreateRequest request) {
         Optional<Like> like = likeRepository.findById(likeId);
         if (like.isPresent()) {
-            Like like1 = like.get();
-            like1.setId(request.getId());
-            like1.setUser(userService.getUser(request.getUserId()));
-            like1.setPost(postService.getPostById(request.getPostId()));
-            return likeRepository.save(like1);
+            Like updatedLike = like.get();
+            updatedLike.setId(request.getId());
+            updatedLike.setUser(userService.getUser(request.getUserId()));
+            updatedLike.setPost(postService.getPostById(request.getPostId()));
+            return likeRepository.save(updatedLike);
         } else {
             return null;
         }
